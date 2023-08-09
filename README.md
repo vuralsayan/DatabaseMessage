@@ -1,11 +1,14 @@
 ## Veritabanlı Mesajlaşma Sistemi
-
+<!-- 
 <img src="./images/giris.png" alt="giris" width="400" height="200"/> 
 <img src="./images/kayıt.png" alt="kayıt" width="400" height = "200"/>
+ -->
 
 
-<div style="display: flex; justify-content: left;">
-  <a style="padding-right: 50px;">
-    <img height=200 src="/images/giris.png" />
-  </a>
-</div>
+
+<a>
+  <img height=200 align="center" src="./images/giris.png" />
+</a>
+<a>
+  <img height=200 align="center" src="./images/giris.png" />
+</a>
