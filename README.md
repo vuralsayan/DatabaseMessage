@@ -18,6 +18,14 @@
   </tr>
  </table>
 
+<table>
+    <tr>
+        <td> Mesaj Ekranı </td>
+    </tr>
+    <tr>
+        <td><img src="./images/mesaj.png" width=800 height=450 > </td>
+    </td>
+</table>
 
 
 
