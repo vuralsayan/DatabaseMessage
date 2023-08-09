@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mesaj));
             this.label1 = new System.Windows.Forms.Label();
             this.LblNumara = new System.Windows.Forms.Label();
             this.LblAdSoyad = new System.Windows.Forms.Label();
@@ -44,11 +45,14 @@
             this.TxtBaslık = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtAlıcı = new System.Windows.Forms.TextBox();
+            this.BtnTemizle = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,6 +139,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BtnTemizle);
             this.groupBox3.Controls.Add(this.TxtAlıcı);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label3);
@@ -144,7 +149,7 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(15, 381);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1241, 211);
+            this.groupBox3.Size = new System.Drawing.Size(1241, 270);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mesaj Paneli";
@@ -184,7 +189,7 @@
             // 
             this.RchTxtMesaj.Location = new System.Drawing.Point(438, 43);
             this.RchTxtMesaj.Name = "RchTxtMesaj";
-            this.RchTxtMesaj.Size = new System.Drawing.Size(797, 142);
+            this.RchTxtMesaj.Size = new System.Drawing.Size(797, 200);
             this.RchTxtMesaj.TabIndex = 3;
             this.RchTxtMesaj.Text = "";
             // 
@@ -211,12 +216,37 @@
             this.TxtAlıcı.Size = new System.Drawing.Size(227, 30);
             this.TxtAlıcı.TabIndex = 7;
             // 
+            // BtnTemizle
+            // 
+            this.BtnTemizle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(153)))));
+            this.BtnTemizle.FlatAppearance.BorderSize = 0;
+            this.BtnTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTemizle.Location = new System.Drawing.Point(94, 191);
+            this.BtnTemizle.Name = "BtnTemizle";
+            this.BtnTemizle.Size = new System.Drawing.Size(227, 43);
+            this.BtnTemizle.TabIndex = 8;
+            this.BtnTemizle.Text = "Temizle";
+            this.BtnTemizle.UseVisualStyleBackColor = false;
+            this.BtnTemizle.Click += new System.EventHandler(this.BtnTemizle_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1206, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Mesaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(237)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1291, 663);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -236,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +290,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtAlıcı;
+        private System.Windows.Forms.Button BtnTemizle;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

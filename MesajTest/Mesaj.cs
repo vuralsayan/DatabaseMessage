@@ -87,5 +87,19 @@ namespace MesajTest
             MessageBox.Show("Mesajınız Gönderildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             GidenKutusu();
         }
+
+        private void BtnTemizle_Click(object sender, EventArgs e)
+        {
+            TxtAlıcı.Text = string.Empty;
+            TxtBaslık.Text = string.Empty;
+            RchTxtMesaj.Text = string.Empty;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            GelenKutusu();
+            GidenKutusu();
+
+        }
     }
 }
