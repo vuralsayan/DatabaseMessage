@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mesaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mesaj.Designer.cs">
+      <DependentUpon>Mesaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Giris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Mesaj.resx">
+      <DependentUpon>Mesaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
