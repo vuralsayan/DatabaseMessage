@@ -70,7 +70,7 @@ namespace MesajTest
         private void button1_Click(object sender, EventArgs e)
         {
             string aliciNumara = Alıcı();
-            if (string.IsNullOrEmpty(aliciNumara))
+            if (string.IsNullOrEmpty(aliciNumara)) // null veya boş ise
             {
                 MessageBox.Show("Alıcı bulunamadı. Lütfen geçerli bir isim giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -86,21 +86,6 @@ namespace MesajTest
             baglanti.Close();
             MessageBox.Show("Mesajınız Gönderildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             GidenKutusu();
-
-
-
-            // Alıcı();
-            // string aliciNumara = sonuc.toString();             
-            // baglanti.Open();
-            // SqlCommand komut = new SqlCommand("INSERT INTO TBLMESAJLAR (GONDEREN,ALICI,BASLIK,MESAJ) VALUES(@P1,@P2,@P3,@P4)",baglanti);
-            // komut.Parameters.AddWithValue("@P1", numara);
-            //komut.Parameters.AddWithValue("@P2", TxtAlıcı.Text);
-            // komut.Parameters.AddWithValue("@P3", TxtBaslık.Text);   
-            // komut.Parameters.AddWithValue("@P4", RchTxtMesaj.Text);
-            // komut.ExecuteNonQuery();
-            // baglanti.Close();
-            // MessageBox.Show("Mesajınız Gönderildi","Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Information);
-            // GidenKutusu();
         }
     }
 }
