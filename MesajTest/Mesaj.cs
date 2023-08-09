@@ -24,7 +24,7 @@ namespace MesajTest
 
         void GelenKutusu()
         {
-            SqlDataAdapter da1 = new SqlDataAdapter("SELECT MESAJID,CONCAT (AD, ' ', SOYAD) as 'Gönderen', BASLIK,MESAJ FROM TBLMESAJLAR inner join TBLKISILER ON TBLMESAJLAR.GONDEREN = TBLKISILER.NUMARA WHERE ALICI = " + numara + "ORDER BY MESAJID ASC", baglanti);
+            SqlDataAdapter da1 = new SqlDataAdapter("SELECT CONCAT (AD, ' ', SOYAD) as 'Gönderen', BASLIK as 'Başlık',MESAJ as 'Mesaj' FROM TBLMESAJLAR inner join TBLKISILER ON TBLMESAJLAR.GONDEREN = TBLKISILER.NUMARA WHERE ALICI = " + numara + "ORDER BY MESAJID ASC", baglanti);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
             dataGridView1.DataSource = dt1;
@@ -32,7 +32,7 @@ namespace MesajTest
 
         void GidenKutusu()
         {
-            SqlDataAdapter da2 = new SqlDataAdapter("SELECT MESAJID,CONCAT(AD, ' ', SOYAD) as 'Alıcı', BASLIK,MESAJ FROM TBLMESAJLAR inner join TBLKISILER ON TBLMESAJLAR.ALICI = TBLKISILER.NUMARA WHERE GONDEREN = " + numara + "ORDER BY MESAJID ASC", baglanti);
+            SqlDataAdapter da2 = new SqlDataAdapter("SELECT CONCAT(AD, ' ', SOYAD) as 'Alıcı', BASLIK as 'Başlık',MESAJ as 'Mesaj' FROM TBLMESAJLAR inner join TBLKISILER ON TBLMESAJLAR.ALICI = TBLKISILER.NUMARA WHERE GONDEREN = " + numara + "ORDER BY MESAJID ASC", baglanti);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
             dataGridView2.DataSource = dt2;
@@ -99,7 +99,7 @@ namespace MesajTest
         {
             GelenKutusu();
             GidenKutusu();
-
+            MessageBox.Show("Mesajlarınız Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
