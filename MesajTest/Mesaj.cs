@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,15 +24,15 @@ namespace MesajTest
 
         void GelenKutusu()
         {
-            SqlDataAdapter da1 = new SqlDataAdapter("SELECT MESAJID,CONCAT (AD, ' ', SOYAD) as 'Gönderen', BASLIK,MESAJ FROM TBLMESAJLAR inner join TBLKISILER ON TBLMESAJLAR.GONDEREN = TBLKISILER.NUMARA WHERE ALICI = " + numara, baglanti);
-            DataTable dt1 = new DataTable();        
+            SqlDataAdapter da1 = new SqlDataAdapter("SELECT MESAJID,CONCAT (AD, ' ', SOYAD) as 'Gönderen', BASLIK,MESAJ FROM TBLMESAJLAR inner join TBLKISILER ON TBLMESAJLAR.GONDEREN = TBLKISILER.NUMARA WHERE ALICI = " + numara + "ORDER BY MESAJID ASC", baglanti);
+            DataTable dt1 = new DataTable();
             da1.Fill(dt1);
             dataGridView1.DataSource = dt1;
         }
 
         void GidenKutusu()
         {
-            SqlDataAdapter da2 = new SqlDataAdapter("SELECT MESAJID,CONCAT(AD, ' ', SOYAD) as 'Alıcı', BASLIK,MESAJ FROM TBLMESAJLAR\r\ninner join TBLKISILER\r\nON TBLMESAJLAR.ALICI = TBLKISILER.NUMARA WHERE GONDEREN = " + numara, baglanti);
+            SqlDataAdapter da2 = new SqlDataAdapter("SELECT MESAJID,CONCAT(AD, ' ', SOYAD) as 'Alıcı', BASLIK,MESAJ FROM TBLMESAJLAR inner join TBLKISILER ON TBLMESAJLAR.ALICI = TBLKISILER.NUMARA WHERE GONDEREN = " + numara + "ORDER BY MESAJID ASC", baglanti);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
             dataGridView2.DataSource = dt2;
@@ -44,27 +45,62 @@ namespace MesajTest
             GidenKutusu();
             // Ad soydadı çekme 
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("SELECT AD,SOYAD FROM TBLKISILER WHERE NUMARA=" + numara,baglanti);
-            SqlDataReader dr = komut.ExecuteReader();   
+            SqlCommand komut = new SqlCommand("SELECT AD,SOYAD FROM TBLKISILER WHERE NUMARA=" + numara, baglanti);
+            SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
                 LblAdSoyad.Text = dr[0] + " " + dr[1];
-            }   
+            }
             baglanti.Close();
         }
 
+        string Alıcı()
+        {
+            string alici = TxtAlıcı.Text;
+            string sorgu = "SELECT NUMARA FROM TBLKISILER WHERE AD + ' ' + SOYAD = @P1";
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand(sorgu, baglanti);
+            komut.Parameters.AddWithValue("@P1", alici);
+            object sonuc = komut.ExecuteScalar();
+            baglanti.Close();
+            return sonuc?.ToString(); // null değilse sonucu döndür, null ise null döndür
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
+            string aliciNumara = Alıcı();
+            if (string.IsNullOrEmpty(aliciNumara))
+            {
+                MessageBox.Show("Alıcı bulunamadı. Lütfen geçerli bir isim giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("INSERT INTO TBLMESAJLAR (GONDEREN,ALICI,BASLIK,MESAJ) VALUES(@P1,@P2,@P3,@P4)",baglanti);
+            SqlCommand komut = new SqlCommand("INSERT INTO TBLMESAJLAR (GONDEREN,ALICI,BASLIK,MESAJ) VALUES(@P1,@P2,@P3,@P4)", baglanti);
             komut.Parameters.AddWithValue("@P1", numara);
-            komut.Parameters.AddWithValue("@P2", MskAlıcı.Text);
-            komut.Parameters.AddWithValue("@P3", TxtBaslık.Text);   
+            komut.Parameters.AddWithValue("@P2", aliciNumara);
+            komut.Parameters.AddWithValue("@P3", TxtBaslık.Text);
             komut.Parameters.AddWithValue("@P4", RchTxtMesaj.Text);
             komut.ExecuteNonQuery();
             baglanti.Close();
-            MessageBox.Show("Mesajınız Gönderildi","Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Mesajınız Gönderildi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             GidenKutusu();
+
+
+
+            // Alıcı();
+            // string aliciNumara = sonuc.toString();             
+            // baglanti.Open();
+            // SqlCommand komut = new SqlCommand("INSERT INTO TBLMESAJLAR (GONDEREN,ALICI,BASLIK,MESAJ) VALUES(@P1,@P2,@P3,@P4)",baglanti);
+            // komut.Parameters.AddWithValue("@P1", numara);
+            //komut.Parameters.AddWithValue("@P2", TxtAlıcı.Text);
+            // komut.Parameters.AddWithValue("@P3", TxtBaslık.Text);   
+            // komut.Parameters.AddWithValue("@P4", RchTxtMesaj.Text);
+            // komut.ExecuteNonQuery();
+            // baglanti.Close();
+            // MessageBox.Show("Mesajınız Gönderildi","Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            // GidenKutusu();
         }
     }
 }

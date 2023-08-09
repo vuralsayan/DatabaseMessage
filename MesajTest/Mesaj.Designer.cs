@@ -42,8 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.RchTxtMesaj = new System.Windows.Forms.RichTextBox();
             this.TxtBaslık = new System.Windows.Forms.TextBox();
-            this.MskAlıcı = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.TxtAlıcı = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,12 +131,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.TxtAlıcı);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.RchTxtMesaj);
             this.groupBox3.Controls.Add(this.TxtBaslık);
-            this.groupBox3.Controls.Add(this.MskAlıcı);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(12, 431);
             this.groupBox3.Name = "groupBox3";
@@ -188,15 +188,6 @@
             this.TxtBaslık.Size = new System.Drawing.Size(227, 30);
             this.TxtBaslık.TabIndex = 2;
             // 
-            // MskAlıcı
-            // 
-            this.MskAlıcı.Location = new System.Drawing.Point(94, 46);
-            this.MskAlıcı.Mask = "0000";
-            this.MskAlıcı.Name = "MskAlıcı";
-            this.MskAlıcı.Size = new System.Drawing.Size(227, 30);
-            this.MskAlıcı.TabIndex = 1;
-            this.MskAlıcı.ValidatingType = typeof(int);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -205,6 +196,13 @@
             this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Alıcı:";
+            // 
+            // TxtAlıcı
+            // 
+            this.TxtAlıcı.Location = new System.Drawing.Point(94, 49);
+            this.TxtAlıcı.Name = "TxtAlıcı";
+            this.TxtAlıcı.Size = new System.Drawing.Size(227, 30);
+            this.TxtAlıcı.TabIndex = 7;
             // 
             // Mesaj
             // 
@@ -250,9 +248,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox RchTxtMesaj;
         private System.Windows.Forms.TextBox TxtBaslık;
-        private System.Windows.Forms.MaskedTextBox MskAlıcı;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtAlıcı;
     }
 }
