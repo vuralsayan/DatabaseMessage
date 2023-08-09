@@ -13,8 +13,8 @@
      <td>Kayıt Ekranı</td>
   </tr>
   <tr>
-    <td><img src="./images/giris.png" width=350 height=200></td>
-    <td><img src="./images/kayıt.png" width=350 height=200 ></td>
+    <td><img src="./images/giris.png" width=400 height=200></td>
+    <td><img src="./images/kayıt.png" width=400 height=200 ></td>
   </tr>
  </table>
 
