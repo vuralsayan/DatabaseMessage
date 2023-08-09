@@ -37,6 +37,7 @@ namespace MesajTest
                 Mesaj mesaj = new Mesaj();
                 mesaj.numara = MskNumara.Text;
                 mesaj.Show();
+                this.Hide();
             }
             else
             {

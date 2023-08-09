@@ -54,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 52);
+            this.label1.Location = new System.Drawing.Point(236, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 24);
             this.label1.TabIndex = 0;
@@ -63,25 +63,27 @@
             // LblNumara
             // 
             this.LblNumara.AutoSize = true;
-            this.LblNumara.Location = new System.Drawing.Point(136, 52);
+            this.LblNumara.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblNumara.Location = new System.Drawing.Point(314, 20);
             this.LblNumara.Name = "LblNumara";
-            this.LblNumara.Size = new System.Drawing.Size(58, 24);
+            this.LblNumara.Size = new System.Drawing.Size(66, 24);
             this.LblNumara.TabIndex = 1;
             this.LblNumara.Text = "0000";
             // 
             // LblAdSoyad
             // 
             this.LblAdSoyad.AutoSize = true;
-            this.LblAdSoyad.Location = new System.Drawing.Point(340, 52);
+            this.LblAdSoyad.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblAdSoyad.Location = new System.Drawing.Point(114, 20);
             this.LblAdSoyad.Name = "LblAdSoyad";
-            this.LblAdSoyad.Size = new System.Drawing.Size(93, 24);
+            this.LblAdSoyad.Size = new System.Drawing.Size(105, 24);
             this.LblAdSoyad.TabIndex = 3;
             this.LblAdSoyad.Text = "Null Null";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(235, 52);
+            this.label4.Location = new System.Drawing.Point(32, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 24);
             this.label4.TabIndex = 2;
@@ -89,6 +91,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 26);
@@ -101,7 +104,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 113);
+            this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(615, 287);
             this.groupBox1.TabIndex = 6;
@@ -111,22 +114,23 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(652, 116);
+            this.groupBox2.Location = new System.Drawing.Point(652, 69);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(604, 284);
+            this.groupBox2.Size = new System.Drawing.Size(615, 287);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giden Kutusu";
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 26);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(598, 255);
+            this.dataGridView2.Size = new System.Drawing.Size(609, 258);
             this.dataGridView2.TabIndex = 4;
             // 
             // groupBox3
@@ -138,7 +142,7 @@
             this.groupBox3.Controls.Add(this.RchTxtMesaj);
             this.groupBox3.Controls.Add(this.TxtBaslık);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(12, 431);
+            this.groupBox3.Location = new System.Drawing.Point(15, 381);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1241, 211);
             this.groupBox3.TabIndex = 8;
@@ -165,12 +169,15 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(253)))), ((int)(((byte)(102)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(94, 142);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 43);
+            this.button1.Size = new System.Drawing.Size(227, 43);
             this.button1.TabIndex = 4;
             this.button1.Text = "Gönder";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RchTxtMesaj
@@ -191,7 +198,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 52);
+            this.label2.Location = new System.Drawing.Point(35, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 0;
@@ -209,7 +216,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(237)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1268, 663);
+            this.ClientSize = new System.Drawing.Size(1291, 663);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
