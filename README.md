@@ -1,7 +1,7 @@
 ## Veritabanlı Mesajlaşma Sistemi
 
-<img src="./images/giris.png" alt="giris" width="400" height="270"/> 
-<img src="./images/kayıt.png" alt="kayıt" width="400" height = "270"/>
+<img src="./images/giris.png" alt="giris" width="400" height="200"/> 
+<img src="./images/kayıt.png" alt="kayıt" width="400" height = "200"/>
 
 
 <div style="display: flex; justify-content: left;">
