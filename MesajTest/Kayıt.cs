@@ -56,7 +56,7 @@ namespace MesajTest
             komut.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show($"Kayıt İşlemi Başarılı \nNumaranız: {yeniNumara}","Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+            this.Hide();
         }
     }
 }
