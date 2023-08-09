@@ -7,8 +7,8 @@
 
 
 <a>
-  <img height=200 align="left" src="./images/giris.png" />
+  <img height=250 align="left" src="./images/giris.png" />
 </a>
 <a>
-  <img height=200 align="right" src="./images/giris.png" />
+  <img height=250 align="right" src="./images/giris.png" />
 </a>
