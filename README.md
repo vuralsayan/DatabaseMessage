@@ -1,14 +1,14 @@
 ## Veritabanlı Mesajlaşma Sistemi
-<!-- 
-<img src="./images/giris.png" alt="giris" width="400" height="200"/> 
-<img src="./images/kayıt.png" alt="kayıt" width="400" height = "200"/>
- -->
-
-
 
 <a>
-  <img height=250 align="left" src="./images/giris.png" />
+  <img height=200 width=350 align="right" src="./images/giris.png" />
 </a>
 <a>
-  <img height=250 align="right" src="./images/giris.png" />
+  <img height=200 width=350 align="left"src="./images/kayıt.png" />
 </a>
+
+<br><br>
+
+<p align="center" padding-top = 50px>
+  <img src="./images/mesaj.png">
+</p>
